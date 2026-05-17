@@ -6,5 +6,7 @@ if app_mode == 'Home':
   st.title ('Proyecto N°1 de la Especialización de Python')
   st.image('Python_logo.png')
   st.image('DMC.png')
-  st.write('Miguel Angel Limaquispe Huaman')
+  st.write('Estudiante: Miguel Angel Limaquispe Huaman')
+  st.write('Modulo 1: Pyhton Fundamentals')
+  st.write('Información General: Ingeneriero de Sistemas con experiencia en Bussines Inteligencia en Sectores de Banca, Telecomunicaciones, Consumo Masivo y Farmaceútico')
   
