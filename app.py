@@ -8,11 +8,6 @@ if app_mode == 'Home':
  
   st.image('Python_logo.png')
   st.image('DMC.png')
-  st.write('Estudiante: Miguel Angel Limaquispe Huaman')
-  st.write('Modulo 1: Pyhton Fundamentals')
-  st.write('Información General: Ingeniero de Sistemas con experiencia en Bussines Intelligence en Sectores de Banca, Telecomunicaciones, Consumo Masivo y Farmaceútico.')
-  st.write('Año: 34 años')
-  st.write('Descripción: Proyecto enfocado en el desarrollo de una Aplicación con Streamlit')
   st.markdown(
     '''
     Estudiante: Miguel Angel Limaquispe Huaman
@@ -26,19 +21,8 @@ if app_mode == 'Home':
     Descripción: Proyecto enfocado en el desarrollo de una Aplicación con Streamlit
     '''
     )
- 
-st.markdown('''
-    :red[Streamlit] :orange[can] :green[write] :blue[text] :violet[in]
-    :gray[pretty] :rainbow[colors] and :blue-background[highlight] text.''')
-st.markdown("Here's a bouquet &mdash;\
-            :tulip::cherry_blossom::rose::hibiscus::sunflower::blossom:")
 
-multi = '''If you end a line with two spaces,
-a soft return is used for the next line.
 
-Two (or more) newline characters in a row will result in a hard return.
-'''
-st.markdown(multi)
   
  
   
