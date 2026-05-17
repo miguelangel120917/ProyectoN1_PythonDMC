@@ -6,4 +6,5 @@ if app_mode == 'Home':
   st.title ('Proyecto N°1 de la Especialización de Python')
   st.image('Python_logo.png')
   st.image('DMC.png')
+  st.write('Miguel Angel Limaquispe Huaman')
   
