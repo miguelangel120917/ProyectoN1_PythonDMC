@@ -16,9 +16,13 @@ if app_mode == 'Home':
   st.markdown(
     '''
     Estudiante: Miguel Angel Limaquispe Huaman
+    
     Modulo 1: Pyhton Fundamentals
+    
     Información General: Ingeniero de Sistemas con experiencia en Bussines Intelligence en Sectores de Banca, Telecomunicaciones, Consumo Masivo y Farmaceútico.
+    
     Año: 34 años
+    
     Descripción: Proyecto enfocado en el desarrollo de una Aplicación con Streamlit
     '''
     )
