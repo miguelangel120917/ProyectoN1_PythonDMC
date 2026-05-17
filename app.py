@@ -5,8 +5,7 @@ app_mode = st.sidebar.selectbox('Secciones',['Home','Ejercicio 1','Ejercicio 2',
 if app_mode == 'Home':
   st.title ('Proyecto N°1 de la Especialización de Python')
   st.subheader("_Streamlit_ is :blue[cool] :sunglasses:")
-  st.subheader("One", divider=True)
-  st.subheader("Four", divider=True)
+ 
   st.image('Python_logo.png')
   st.image('DMC.png')
   st.write('Estudiante: Miguel Angel Limaquispe Huaman')
@@ -14,5 +13,14 @@ if app_mode == 'Home':
   st.write('Información General: Ingeniero de Sistemas con experiencia en Bussines Intelligence en Sectores de Banca, Telecomunicaciones, Consumo Masivo y Farmaceútico.')
   st.write('Año: 34 años')
   st.write('Descripción: Proyecto enfocado en el desarrollo de una Aplicación con Streamlit')
+  multi = 
+  '''
+  Estudiante: Miguel Angel Limaquispe Huaman
+  Modulo 1: Pyhton Fundamentals
+  Información General: Ingeniero de Sistemas con experiencia en Bussines Intelligence en Sectores de Banca, Telecomunicaciones, Consumo Masivo y Farmaceútico.
+  Año: 34 años
+  Descripción: Proyecto enfocado en el desarrollo de una Aplicación con Streamlit
+  '''
+  st.markdown(multi)
  
   
