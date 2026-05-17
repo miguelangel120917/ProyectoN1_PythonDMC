@@ -23,7 +23,7 @@ if app_mode == 'Home':
     )
 elif app_mode == 'Ejercicio 1':
   
-  st.text_input('concepto')
+  st.text_input('Concepto')
   st.selectbox('Tipo de Movimiento',['Ingreso','Gasto'])
   st.text_input('Valor')
   st.button('Agregar Movimiento')
