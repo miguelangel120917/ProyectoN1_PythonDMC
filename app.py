@@ -21,6 +21,12 @@ if app_mode == 'Home':
     Descripción: Proyecto enfocado en el desarrollo de una Aplicación con Streamlit
     '''
     )
+elif app_mode == 'Ejercicio 1':
+  
+  st.text_input('concepto')
+  st.selectbox('Tipo de Movimiento',['Ingreso','Gasto'])
+  st.text_input('Valor')
+  st.button('Agregar Movimiento')
 
 
   
