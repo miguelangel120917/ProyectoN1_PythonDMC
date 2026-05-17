@@ -5,6 +5,7 @@ app_mode = st.sidebar.selectbox('Secciones',['Home','Ejercicio 1','Ejercicio 2',
 if app_mode == 'Home':
   st.title ('Proyecto N°1 de la Especialización de Python')
   st.subheader("_Streamlit_ is :blue[cool] :sunglasses:")
+  st.subheader("One", divider=True)
   st.subheader("Four", divider=True)
   st.image('Python_logo.png')
   st.image('DMC.png')
