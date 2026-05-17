@@ -87,9 +87,9 @@ elif app_mode == 'Ejercicio 1':
   
       # Mostrar Métricas
       c1, c2, c3 = st.columns(3)
-      c1.metric("Total Ingresos", f"${total_ingresos:,.2f}")
-      c2.metric("Total Gastos", f"${total_gastos:,.2f}")
-      c3.metric("Saldo Final", f"${saldo_final:,.2f}")
+      c1.metric("Total Ingresos", f"S/{total_ingresos:,.2f}")
+      c2.metric("Total Gastos", f"S/{total_gastos:,.2f}")
+      c3.metric("Saldo Final", f"S/{saldo_final:,.2f}")
   
       # Mostrar Estado del flujo
       if saldo_final >= 0:
