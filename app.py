@@ -9,4 +9,5 @@ if app_mode == 'Home':
   st.write('Estudiante: Miguel Angel Limaquispe Huaman')
   st.write('Modulo 1: Pyhton Fundamentals')
   st.write('Información General: Ingeniero de Sistemas con experiencia en Bussines Intelligence en Sectores de Banca, Telecomunicaciones, Consumo Masivo y Farmaceútico')
+  st.write('Año: 34 años')
   
