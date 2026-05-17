@@ -1,2 +1,2 @@
 import streamlit as st
-st.sidebar.selectbox('Pick your gender',['Male','Female'])
+st.sidebar.selectbox('Secciones',['Home','Ejercicios 1','Ejercicios 2','Ejercicios 3','Ejercicios 4'])
