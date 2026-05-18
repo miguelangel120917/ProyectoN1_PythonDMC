@@ -83,7 +83,7 @@ elif app_mode == 'Ejercicio 1':
   
       # Mostrar Tabla
       st.subheader("Lista de movimientos registrados")
-      st.dataframe(df, use_container_width=True)
+      st.dataframe(df, use_container_width=True, hide_index=True)
   
       # Mostrar Métricas
       c1, c2, c3 = st.columns(3)
