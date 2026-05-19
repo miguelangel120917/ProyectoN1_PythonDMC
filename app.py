@@ -121,7 +121,7 @@ elif app_mode == 'Ejercicio 2':
        st.error ('el precio debe ser mayor a cero')
       elif cantdiad <0:
         st.error ('la cantidad debe ser mayor a cero')
-      else registro = {
+      else: registro = {
         'produco'=producto,
         'categoria'=categoria,
         'precio unitario' = precio_unitario,
