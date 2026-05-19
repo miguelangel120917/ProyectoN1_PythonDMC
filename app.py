@@ -112,7 +112,7 @@ elif app_mode == 'Ejercicio 2':
     categoria = st.selectbox('Categoría',['Computadoras','Entrada','Salida','Almacenamiento'])
     precio_unitario = st.number_input('Precio Unitario', min_value=0.0, step=1.0)
     cantidad = st.number_input("Cantidad", min_value=0, step=1)
-    total = cantidad*precio
+    total = cantidad*precio_unitario
     # Botón para agregar
     if st.button('agregar registro'):
       if producto.strip()=="":
