@@ -118,7 +118,7 @@ elif app_mode == 'Ejercicio 2':
       if producto.strip()=="":
         st.error('ingresar un producto')
       elif precio_unitario <0:
-       st.error ('el precio debe ser mayor a cero')
+        st.error ('el precio debe ser mayor a cero')
       elif cantidad <0:
         st.error ('la cantidad debe ser mayor a cero')
       else: registro = {
@@ -134,9 +134,12 @@ elif app_mode == 'Ejercicio 2':
           df = pd.DataFrame(st.session_state.registro)
           st.dataframe(df,use_container_width=True, hide_index=True)
        
-      # Botón para reiniciar
-      if st.button("Limpiar todo"):
-          st.session_state.registro = []
-          st.rerun()
+          # Botón para reiniciar
+          if st.button("Limpiar todo"):
+              st.session_state.registro = []
+              st.rerun()
+      else:
+      st.info("Aún no hay registros.")
+
  
   
