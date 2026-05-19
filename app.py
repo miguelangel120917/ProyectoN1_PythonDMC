@@ -139,7 +139,7 @@ elif app_mode == 'Ejercicio 2':
               st.session_state.registro = []
               st.rerun()
       else:
-      st.info("Aún no hay registros.")
+        st.info("Aún no hay registros.")
 
  
   
