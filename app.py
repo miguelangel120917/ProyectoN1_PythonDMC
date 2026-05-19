@@ -129,6 +129,8 @@ elif app_mode == 'Ejercicio 2':
         'total': total
       }
       st.session_state.registro.append(registro)
+      
+      if st.session_state.registro:
       df = pd.DataFrame(st.session_state.registro)
       st.dataframe(df,use_container_width=True, hide_index=True)
        
