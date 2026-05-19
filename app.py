@@ -117,7 +117,7 @@ elif app_mode == 'Ejercicio 2':
     if st.button('agregar registro'):
       if producto.strip()=="":
         st.error('ingresar un producto')
-      elif precio <0:
+      elif precio_unitario <0:
        st.error ('el precio debe ser mayor a cero')
       elif cantidad <0:
         st.error ('la cantidad debe ser mayor a cero')
