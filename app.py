@@ -106,28 +106,28 @@ elif app_mode == 'Ejercicio 1':
       st.info("Aún no hay movimientos registrados.")
 
 elif app_mode == 'Ejercicio 2':
-   if "registro" not in st.session_state:
-      st.session_state.registro = []
-  producto =  st.text_inout('producto', placeholder="Ej: Ingrese producto")
-  categoria = st.selectbox('Categoría',['Computadoras','Entrada','Salida','Almacenamiento'])
-  precio_unitario = st.number_input('Precio Unitario', min_value=0.0, step=1.0)
-  cantidad = st.number_input("Cantidad", min_value=0, step=1)
-  total = cantidad*precio
-  # Botón para agregar
-  if st.button('agregar registro'):
-    if producto.strip()=="":
-      st.error('ingresar un producto')
-    elif precio <0:
-     st.error ('el precio debe ser mayor a cero')
-    elif cantdiad <0:
-      st.error ('la cantidad debe ser mayor a cero')
-    else registro = {
-      'produco'=producto,
-      'categoria'=categoria,
-      'precio unitario' = precio_unitario,
-      'cantidad'=cantidad,
-      'total'=total
-    }
-    st.session_state.registro.append(registro)
+    if "registro" not in st.session_state:
+        st.session_state.registro = []
+    producto =  st.text_inout('producto', placeholder="Ej: Ingrese producto")
+    categoria = st.selectbox('Categoría',['Computadoras','Entrada','Salida','Almacenamiento'])
+    precio_unitario = st.number_input('Precio Unitario', min_value=0.0, step=1.0)
+    cantidad = st.number_input("Cantidad", min_value=0, step=1)
+    total = cantidad*precio
+    # Botón para agregar
+    if st.button('agregar registro'):
+      if producto.strip()=="":
+        st.error('ingresar un producto')
+      elif precio <0:
+       st.error ('el precio debe ser mayor a cero')
+      elif cantdiad <0:
+        st.error ('la cantidad debe ser mayor a cero')
+      else registro = {
+        'produco'=producto,
+        'categoria'=categoria,
+        'precio unitario' = precio_unitario,
+        'cantidad'=cantidad,
+        'total'=total
+      }
+      st.session_state.registro.append(registro)
  
   
