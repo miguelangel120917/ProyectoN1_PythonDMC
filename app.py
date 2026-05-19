@@ -107,7 +107,7 @@ elif app_mode == 'Ejercicio 1':
 
 elif app_mode == 'Ejercicio 2':
     if "registro" not in st.session_state:
-        st.session_state.registro = []
+        st.session_state.registros = []
     producto =  st.text_input('Producto', placeholder="Ej: Ingrese producto")
     categoria = st.selectbox('Categoría',['Computadoras','Entrada','Salida','Almacenamiento'])
     precio_unitario = st.number_input('Precio Unitario', min_value=0.0, step=1.0)
@@ -115,30 +115,32 @@ elif app_mode == 'Ejercicio 2':
     total = cantidad*precio_unitario
     # Botón para agregar
     if st.button('agregar registro'):
-      if producto.strip()=="":
-        st.error('ingresar un producto')
-      elif precio_unitario <0:
-        st.error ('el precio debe ser mayor a cero')
-      elif cantidad <0:
-        st.error ('la cantidad debe ser mayor a cero')
-      else: registro = {
-        'producto': producto,
-        'categoria' : categoria,
-        'precio unitario' : precio_unitario,
-        'cantidad' : cantidad,
-        'total': total
-      }
-      st.session_state.registro.append(registro)
+        if producto.strip()=="":
+          st.error('ingresar un producto')
+        elif precio_unitario <0:
+          st.error ('el precio debe ser mayor a cero')
+        elif cantidad <0:
+          st.error ('la cantidad debe ser mayor a cero')
+        else: 
+          registro = {
+          'producto': producto,
+          'categoria' : categoria,
+          'precio unitario' : precio_unitario,
+          'cantidad' : cantidad,
+          'total': total
+        }
+        st.session_state.registros.append(registro)
+        st.success("Agregado")
       
-      if st.session_state.registro:
-          df = pd.DataFrame(st.session_state.registro)
-          st.dataframe(df,use_container_width=True, hide_index=True)
+    if st.session_state.registros:
+       df = pd.DataFrame(st.session_state.registros)
+       st.dataframe(df,use_container_width=True, hide_index=True)
        
-          # Botón para reiniciar
-          if st.button("Limpiar todo"):
-              st.session_state.registro = []
-              st.rerun()
-      else:
+       # Botón para reiniciar
+       if st.button("Limpiar todo"):
+           st.session_state.registros = []
+           st.rerun()
+    else:
         st.info("Aún no hay registros.")
 
  
