@@ -108,7 +108,7 @@ elif app_mode == 'Ejercicio 1':
 elif app_mode == 'Ejercicio 2':
     if "registro" not in st.session_state:
         st.session_state.registro = []
-    producto =  st.text_inout('producto', placeholder="Ej: Ingrese producto")
+    producto =  st.text_input('producto', placeholder="Ej: Ingrese producto")
     categoria = st.selectbox('Categoría',['Computadoras','Entrada','Salida','Almacenamiento'])
     precio_unitario = st.number_input('Precio Unitario', min_value=0.0, step=1.0)
     cantidad = st.number_input("Cantidad", min_value=0, step=1)
