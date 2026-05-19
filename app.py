@@ -122,11 +122,11 @@ elif app_mode == 'Ejercicio 2':
       elif cantdiad <0:
         st.error ('la cantidad debe ser mayor a cero')
       else: registro = {
-        'produco'=producto,
-        'categoria'=categoria,
-        'precio unitario' = precio_unitario,
-        'cantidad'=cantidad,
-        'total'=total
+        'producto': producto,
+        'categoria' : categoria,
+        'precio unitario' : precio_unitario,
+        'cantidad' : cantidad,
+        'total': total
       }
       st.session_state.registro.append(registro)
  
