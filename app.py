@@ -106,7 +106,7 @@ elif app_mode == 'Ejercicio 1':
       st.info("Aún no hay movimientos registrados.")
 
 elif app_mode == 'Ejercicio 2':
-    if "registro" not in st.session_state:
+    if "registros" not in st.session_state:
         st.session_state.registros = []
     producto =  st.text_input('Producto', placeholder="Ej: Ingrese producto")
     categoria = st.selectbox('Categoría',['Computadoras','Entrada','Salida','Almacenamiento'])
