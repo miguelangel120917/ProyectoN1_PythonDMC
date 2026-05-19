@@ -119,7 +119,7 @@ elif app_mode == 'Ejercicio 2':
         st.error('ingresar un producto')
       elif precio <0:
        st.error ('el precio debe ser mayor a cero')
-      elif cantdiad <0:
+      elif cantidad <0:
         st.error ('la cantidad debe ser mayor a cero')
       else: registro = {
         'producto': producto,
