@@ -129,5 +129,7 @@ elif app_mode == 'Ejercicio 2':
         'total': total
       }
       st.session_state.registro.append(registro)
+      df = pd.DataFrame(st.session_state.historial)
+      st.dataframe(df,use_container_width=True, hide_index=True)
  
   
