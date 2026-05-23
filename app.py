@@ -142,6 +142,7 @@ elif app_mode == 'Ejercicio 2':
            st.rerun()
     else:
         st.info("Aún no hay registros.")
+elif app_mode == 'Ejercicio 3':
 
  
   
