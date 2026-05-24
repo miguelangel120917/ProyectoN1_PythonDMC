@@ -160,7 +160,7 @@ elif app_mode == 'Ejercicio 3':
     elif parametro_2<0:
       st.error('valor negativo, ingresar mayor a cero')
     else:
-      tablero ={
+      tablero = {
       'tiempo1' = parametro_1,
       'tiempo2' = parametro_2 
       }
