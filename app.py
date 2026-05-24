@@ -152,7 +152,7 @@ elif app_mode == 'Ejercicio 3':
     st.session_state.registros = []
   parametro_1 = st.selectbox('tiempototal',[1,2,3,4])
   parametro_2 = st.number_input('tiempocaida',min_value=0.0,step=1.0)
-  #lfp.calcular_disponibilidad_sistema(parametro_1,parametro_2)
+  dispo = lfp.calcular_disponibilidad_sistema(parametro_1,parametro_2)
   # Botón para agregar
   if st.button('Agregar Registro'):
     if parametro_1<0:
@@ -162,7 +162,8 @@ elif app_mode == 'Ejercicio 3':
     else:
       tablero = {
       'tiempo1' : parametro_1,
-      'tiempo2' : parametro_2 
+      'tiempo2' : parametro_2,
+      'dispo' : dispo
       }
       st.session_state.registros.append(tablero)
       st.success('Agregado')
