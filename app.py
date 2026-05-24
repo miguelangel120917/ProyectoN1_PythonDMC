@@ -148,7 +148,8 @@ elif app_mode == 'Ejercicio 3':
   ## la funcion a usar es calcular_disponibilidad_sistema
   contempla el ingreso de dos parámetros
   """)
-  parametro_1 = st.selectbox('tiempotemporal',[1,2,3,4])
+  parametro_1 = st.selectbox('tiempototal',[1,2,3,4])
+  parametro_2 = st.number_input('tipompocaida',min_value=0.0,step=1.0)
   
 
  
