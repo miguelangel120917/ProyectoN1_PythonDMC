@@ -144,42 +144,61 @@ elif app_mode == 'Ejercicio 2':
     else:
         st.info("Aún no hay registros.")
 elif app_mode == 'Ejercicio 3':
-  st.markdown("""
-  ## la funcion a usar es calcular_disponibilidad_sistema
-  contempla el ingreso de dos parámetros
-  """)
-  if 'registros' not in st.session_state:
-    st.session_state.registros = []
-  parametro_1 = st.selectbox('tiempototal',[1,2,3,4])
-  parametro_2 = st.number_input('tiempocaida',min_value=0.0,step=1.0)
-  dispo = lfp.calcular_disponibilidad_sistema(parametro_1,parametro_2)
-  #st.metric("Disponibilidad calculada: ",dispo)
-  # Botón para agregar
-  if st.button('Agregar Registro'):
-    
-    """
-    if parametro_1<0:
-      st.error('valor negativo, ingresar mayor a cero')
-    elif parametro_2<0:
-      st.error('valor negativo, ingresar mayor a cero')
-    else:
-    """
-    tablero = {
-        'tiempo1' : parametro_1,
-        'tiempo2' : parametro_2,
-        'dispo' : dispo
-      }
-    st.session_state.registros.append(tablero)
-    st.success('Agregado')
-  if st.session_state.registros:
-    df= pd.DataFrame(st.session_state.registros)
-    st.dataframe(df,use_container_width=True,hide_index=True)
-    # Botón para reiniciar
-    if st.button("Limpiar todo"):
-      st.session_state.registros = []
-      st.rerun()
-  else:
-    st.info('Aún no hay registros')
+  # 1. Inicializar el histórico en el session_state
+if 'historico_resultados' not in st.session_state:
+    st.session_state.historico_resultados = []
+
+st.title("🚀 Cálculo de Disponibilidad (Ejercicio 3)")
+
+# 2. Selector de función (aunque solo usemos una, el ejercicio lo pide)
+opcion = st.selectbox("Seleccione la función a utilizar", 
+                     ["Calcular Disponibilidad de Sistema"])
+
+# 3. Widgets para ingresar parámetros
+st.subheader("Parámetros de entrada")
+col1, col2 = st.columns(2)
+
+with col1:
+    t_total = st.number_input("Tiempo Total (horas)", min_value=0.1, value=24.0, step=1.0)
+
+with col2:
+    t_caida = st.number_input("Tiempo Caída (horas)", min_value=0.0, value=0.0, step=0.1)
+
+# 4. Botón para ejecutar y mostrar resultado
+if st.button("Ejecutar Función"):
+    try:
+        # Ejecución de la función desde la librería externa
+        # Recordar que devuelve un diccionario: {"disponibilidad_pct": valor}
+        resultado_dict = lfp.calcular_disponibilidad_sistema(t_total, t_caida)
+        
+        # Extraer el valor del diccionario
+        valor_dispo = resultado_dict["disponibilidad_pct"]
+        
+        # 5. Mostrar resultado en pantalla
+        st.success(f"La disponibilidad calculada es: {valor_dispo}%")
+        st.metric("Resultado", f"{valor_dispo}%")
+
+        # 6. Guardar en el histórico para el DataFrame
+        registro = {
+            "Función": opcion,
+            "T. Total (h)": t_total,
+            "T. Caída (h)": t_caida,
+            "Disponibilidad (%)": valor_dispo
+        }
+        st.session_state.historico_resultados.append(registro)
+
+    except ValueError as e:
+        st.error(f"Error en los parámetros: {e}")
+
+# --- Mostrar tabla histórica ---
+st.divider()
+st.subheader("Tabla histórica de resultados")
+
+if st.session_state.historico_resultados:
+    df_historico = pd.DataFrame(st.session_state.historico_resultados)
+    st.dataframe(df_historico, use_container_width=True)
+else:
+    st.info("Aún no hay registros en el histórico.")
 elif app_mode == 'Ejercicio 4':
   if 'servidores' not in st.session_state:
       st.session_state.servidores = []
