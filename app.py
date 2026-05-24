@@ -180,7 +180,7 @@ elif app_mode == 'Ejercicio 3':
       st.rerun()
   else:
     st.info('Aún no hay registros')
-elif app_mode == 'Ejercicio 3':
+elif app_mode == 'Ejercicio 4':
   if 'servidores' not in st.session_state:
       st.session_state.servidores = []
   
