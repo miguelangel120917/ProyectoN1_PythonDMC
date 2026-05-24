@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import libreria_funciones_proyecto1 as lfp
 
 app_mode = st.sidebar.selectbox('Secciones',['Home','Ejercicio 1','Ejercicio 2','Ejercicio 3','Ejercicio 4'])
 
@@ -143,6 +144,12 @@ elif app_mode == 'Ejercicio 2':
     else:
         st.info("Aún no hay registros.")
 elif app_mode == 'Ejercicio 3':
+  st.markdown("""
+  ## la funcion a usar es calcular_disponibilidad_sistema
+  contempla el ingreso de dos parámetros
+  """)
+  parametro_1 = st.selectbox('tiempotemporal',[1,2,3,4])
+  
 
  
   
