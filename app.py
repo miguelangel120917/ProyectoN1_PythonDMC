@@ -156,6 +156,7 @@ elif app_mode == 'Ejercicio 3':
   st.metric("Disponibilidad calculada", f"{dispo:.2f}")
   # Botón para agregar
   if st.button('Agregar Registro'):
+    
     """
     if parametro_1<0:
       st.error('valor negativo, ingresar mayor a cero')
@@ -163,7 +164,7 @@ elif app_mode == 'Ejercicio 3':
       st.error('valor negativo, ingresar mayor a cero')
     else:
     """
-      tablero = {
+    tablero = {
         'tiempo1' : parametro_1,
         'tiempo2' : parametro_2,
         'dispo' : dispo
