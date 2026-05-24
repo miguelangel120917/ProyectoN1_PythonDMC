@@ -161,7 +161,7 @@ elif app_mode == 'Ejercicio 3':
       st.error('valor negativo, ingresar mayor a cero')
     else:
       tablero ={
-      'tiempototal' = parametro_1
+      'tiempototal' = parametro_1,
       'tiempocaida' = parametro_2 
       }
       st.session_state.registros.append(tablero)
