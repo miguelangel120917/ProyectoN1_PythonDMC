@@ -174,6 +174,10 @@ elif app_mode == 'Ejercicio 3':
   if st.session_state.registros:
     df= pd.DataFrame(st.session_state.registros)
     st.dataframe(df,use_container_width=True,hide_index=True)
+    # Botón para reiniciar
+       if st.button("Limpiar todo"):
+           st.session_state.registros = []
+           st.rerun()
   else:
     st.info('Aún no hay registros')
 
