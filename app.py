@@ -167,7 +167,7 @@ elif app_mode == 'Ejercicio 3':
       st.session_state.registros.append(tablero)
       st.success('Agregado')
   if st.session_state.registros:
-    df= pd.Dataframe(st.session_state.registros)
+    df= pd.DataFrame(st.session_state.registros)
     st.dataframe(df,use_container_width=True,hide_index=True)
   else:
     st.info('Aún no hay registros')
