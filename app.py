@@ -164,9 +164,9 @@ elif app_mode == 'Ejercicio 3':
     else:
     """
       tablero = {
-      'tiempo1' : parametro_1,
-      'tiempo2' : parametro_2,
-      'dispo' : dispo
+        'tiempo1' : parametro_1,
+        'tiempo2' : parametro_2,
+        'dispo' : dispo
       }
       st.session_state.registros.append(tablero)
       st.success('Agregado')
