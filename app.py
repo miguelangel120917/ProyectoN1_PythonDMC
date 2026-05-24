@@ -153,7 +153,7 @@ elif app_mode == 'Ejercicio 3':
   parametro_1 = st.selectbox('tiempototal',[1,2,3,4])
   parametro_2 = st.number_input('tiempocaida',min_value=0.0,step=1.0)
   dispo = lfp.calcular_disponibilidad_sistema(parametro_1,parametro_2)
-  st.metric("Disponibilidad calculada: ", f"{dispo}")
+  st.metric("Disponibilidad calculada: ",dispo)
   # Botón para agregar
   if st.button('Agregar Registro'):
     
