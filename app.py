@@ -180,6 +180,93 @@ elif app_mode == 'Ejercicio 3':
       st.rerun()
   else:
     st.info('Aún no hay registros')
-
+elif app_mode == 'Ejercicio 3':
+  if 'servidores' not in st.session_state:
+      st.session_state.servidores = []
+  
+  st.title("📟 Gestión de Servidores (CRUD)")
+  
+  # Usamos Tabs para organizar el CRUD
+  tab_crear, tab_leer, tab_actualizar, tab_eliminar = st.tabs(["Crear", "Leer", "Actualizar", "Eliminar"])
+  
+  # ---------------------------------------------------------
+  # C - CREATE (Crear)
+  # ---------------------------------------------------------
+  with tab_crear:
+      st.subheader("Registrar Nuevo Servidor")
+      with st.form("form_registro"):
+          nombre = st.text_input("Nombre del Servidor")
+          t_total = st.number_input("Tiempo Total (h)", min_value=1.0, value=24.0)
+          t_caida = st.number_input("Tiempo Caída (h)", min_value=0.0, value=0.0)
+          a_total = st.number_input("Almacenamiento Total (GB)", min_value=1.0, value=100.0)
+          a_usado = st.number_input("Almacenamiento Usado (GB)", min_value=0.0, value=10.0)
+          
+          btn_crear = st.form_submit_button("Guardar Servidor")
+          
+          if btn_crear:
+              try:
+                  # Instanciamos la clase de la librería
+                  nuevo_srv = srv.Servidor(nombre, t_total, t_caida, a_total, a_usado)
+                  # Guardamos el resumen (diccionario) en la lista
+                  st.session_state.servidores.append(nuevo_srv.resumen())
+                  st.success(f"Servidor {nombre} registrado!")
+              except ValueError as e:
+                  st.error(f"Error: {e}")
+  
+  # ---------------------------------------------------------
+  # R - READ (Leer)
+  # ---------------------------------------------------------
+  with tab_leer:
+      st.subheader("Listado de Servidores")
+      if st.session_state.servidores:
+          df = pd.DataFrame(st.session_state.servidores)
+          st.dataframe(df, use_container_width=True)
+      else:
+          st.info("No hay servidores registrados.")
+  
+  # ---------------------------------------------------------
+  # U - UPDATE (Actualizar)
+  # ---------------------------------------------------------
+  with tab_actualizar:
+      st.subheader("Modificar Datos")
+      if st.session_state.servidores:
+          nombres_srv = [s['servidor'] for s in st.session_state.servidores]
+          elegido = st.selectbox("Selecciona servidor para editar", nombres_srv)
+          
+          # Formulario de edición
+          nuevo_t_caida = st.number_input("Nuevo Tiempo de Caída", min_value=0.0)
+          nuevo_a_usado = st.number_input("Nuevo Almacenamiento Usado", min_value=0.0)
+          
+          if st.button("Actualizar"):
+              for s in st.session_state.servidores:
+                  if s['servidor'] == elegido:
+                      # Recalculamos usando la clase de nuevo para validar
+                      try:
+                          # Buscamos datos originales para no perder el nombre y totales
+                          # (En un CRUD real guardaríamos el objeto completo)
+                          upd = srv.Servidor(elegido, 1000, nuevo_t_caida, 1000, nuevo_a_usado) 
+                          s['disponibilidad_pct'] = round(upd.calcular_disponibilidad(), 2)
+                          s['uso_almacenamiento_pct'] = round(upd.calcular_uso_almacenamiento(), 2)
+                          s['estado'] = upd.estado_servidor()
+                          st.success("Actualizado")
+                          st.rerun()
+                      except ValueError as e:
+                          st.error(e)
+      else:
+          st.write("Nada que actualizar.")
+  
+  # ---------------------------------------------------------
+  # D - DELETE (Eliminar)
+  # ---------------------------------------------------------
+  with tab_eliminar:
+      st.subheader("Eliminar Registros")
+      if st.session_state.servidores:
+          nombres_eliminar = [s['servidor'] for s in st.session_state.servidores]
+          a_borrar = st.selectbox("Selecciona servidor a borrar", nombres_eliminar)
+          
+          if st.button("Eliminar permanentemente", type="primary"):
+              st.session_state.servidores = [s for s in st.session_state.servidores if s['servidor'] != a_borrar]
+              st.warning(f"Servidor {a_borrar} eliminado.")
+              st.rerun()
  
   
