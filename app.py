@@ -196,7 +196,7 @@ elif app_mode == 'Ejercicio 3':
   
   if st.session_state.historico_resultados:
       df_historico = pd.DataFrame(st.session_state.historico_resultados)
-      st.dataframe(df_historico, use_container_width=True)
+      st.dataframe(df_historico, use_container_width=True, hide_index=True)
   else:
       st.info("Aún no hay registros en el histórico.")
 elif app_mode == 'Ejercicio 4':
