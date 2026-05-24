@@ -148,9 +148,29 @@ elif app_mode == 'Ejercicio 3':
   ## la funcion a usar es calcular_disponibilidad_sistema
   contempla el ingreso de dos parámetros
   """)
+  if 'registros' not in st.session_state:
+    st.session_state.registros = []
   parametro_1 = st.selectbox('tiempototal',[1,2,3,4])
-  parametro_2 = st.number_input('tipompocaida',min_value=0.0,step=1.0)
-  
+  parametro_2 = st.number_input('tiempocaida',min_value=0.0,step=1.0)
+  lfp.calcular_disponibilidad_sistema(parametro_1,parametro_2)
+  # Botón para agregar
+  if st.button('Agregar Registro'):
+    if parametro_1<0:
+      st.error('valor negativo, ingresar mayor a cero')
+    elif parametro_2<0:
+      st.error('valor negativo, ingresar mayor a cero')
+    else:
+      tablero ={
+      'tiempototal' = parametro_1
+      'tiempocaida' = parametro_2 
+      }
+      st.session_state.registros.append(tablero)
+      st.success('Agregado')
+  if st.session_state.registros:
+    df= pd.Dataframe(st.session_state.registros)
+    st.dataframe(df,use_container_width=True,hide_index=True)
+  else:
+    st.info('Aún no hay registros')
 
  
   
