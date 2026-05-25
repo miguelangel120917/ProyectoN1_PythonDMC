@@ -148,7 +148,7 @@ elif app_mode == 'Ejercicio 3':
   if 'historico_resultados' not in st.session_state:
       st.session_state.historico_resultados = []
   
-  st.title("🚀 Cálculo de Disponibilidad (Ejercicio 3)")
+  st.title("Cálculo de Disponibilidad")
   
   # 2. Selector de función (aunque solo usemos una, el ejercicio lo pide)
   opcion = st.selectbox("Seleccione la función a utilizar", 
