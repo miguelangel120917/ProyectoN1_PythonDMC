@@ -11,7 +11,7 @@ if app_mode == 'Home':
   st.subheader("_Streamlit_ is :blue[cool] :sunglasses:")
  
   st.image('Python_logo.png')
-  st.image('DMC.png')
+  st.sidebar.image('DMC.png')
   st.markdown(
     '''
     Estudiante: Miguel Angel Limaquispe Huaman
