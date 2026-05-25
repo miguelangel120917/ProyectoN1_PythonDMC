@@ -203,7 +203,7 @@ elif app_mode == 'Ejercicio 4':
   if 'servidores' not in st.session_state:
       st.session_state.servidores = []
   
-  st.title("📟 Gestión de Servidores (CRUD)")
+  st.title("Gestión de Servidores (CRUD)")
   
   # Usamos Tabs para organizar el CRUD
   tab_crear, tab_leer, tab_actualizar, tab_eliminar = st.tabs(["Crear", "Leer", "Actualizar", "Eliminar"])
