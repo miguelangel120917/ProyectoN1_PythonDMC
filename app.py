@@ -4,7 +4,7 @@ import numpy as np
 import libreria_funciones_proyecto1 as lfp
 
 st.sidebar.image('DMC.png')
-app_mode = st.sidebar.selectbox('_Secciones_',['Home','Ejercicio 1','Ejercicio 2','Ejercicio 3','Ejercicio 4'])
+app_mode = st.sidebar.selectbox(':black[_Secciones_]',['Home','Ejercicio 1','Ejercicio 2','Ejercicio 3','Ejercicio 4'])
 
 if app_mode == 'Home':
   st.title ('Proyecto N°1 de la Especialización de Python')
