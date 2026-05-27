@@ -153,7 +153,7 @@ elif app_mode == 'Ejercicio 2':
         st.info("Aún no hay registros.")
 elif app_mode == 'Ejercicio 3':
 # --- Configuración de la página ---
-  st.set_page_config(page_title="Ejercicio 2 - Cálculo de Disponibilidad") 
+  st.set_page_config(page_title="Ejercicio 3 - Cálculo de Disponibilidad") 
 # 1. Inicializar el histórico en el session_state
   
   if 'historico_resultados' not in st.session_state:
