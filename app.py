@@ -110,7 +110,7 @@ elif app_mode == 'Ejercicio 2':
     st.set_page_config(page_title="Ejercicio 2 - Formulario")
     st.markdown("""
     ## Formulario
-    Este módulo registrar la venta de accesorios o dispositivos de entrada/salida usando arreglos de NumPy
+    Este módulo registrar la venta de accesorios o dispositivos de entrada/salida usando arreglos de NumPy.
     """)
     st.divider()
   
