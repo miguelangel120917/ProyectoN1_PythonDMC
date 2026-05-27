@@ -30,7 +30,7 @@ elif app_mode == 'Ejercicio 1':
   
   # --- Descripción del ejercicio ---
   st.markdown("""
-  ## Ejercicio 1 – Flujo de caja con listas
+  ## Flujo de caja con listas
   Este módulo permite registrar movimientos financieros. 
   Puedes ingresar el **concepto**, el **tipo** (Ingreso/Gasto) y el **valor**. 
   Al finalizar, verás el historial, los totales y el estado actual de tu flujo.
@@ -106,6 +106,12 @@ elif app_mode == 'Ejercicio 1':
       st.info("Aún no hay movimientos registrados.")
 
 elif app_mode == 'Ejercicio 2':
+  st.markdown("""
+    ## Formulario
+    Este módulo registrar accesorios o dispositivos de entrada usando arreglos de NumPy
+    """
+    st.divider()
+  
     if "registros" not in st.session_state:
         st.session_state.registros = []
     st.title("Registro con NumPy, arrays y DataFrame")
