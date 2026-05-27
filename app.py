@@ -106,7 +106,7 @@ elif app_mode == 'Ejercicio 1':
       st.info("Aún no hay movimientos registrados.")
 
 elif app_mode == 'Ejercicio 2':
-  st.markdown("""
+    st.markdown("""
     ## Formulario
     Este módulo registrar accesorios o dispositivos de entrada usando arreglos de NumPy
     """)
