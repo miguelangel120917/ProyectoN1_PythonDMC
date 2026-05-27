@@ -109,7 +109,7 @@ elif app_mode == 'Ejercicio 2':
   st.markdown("""
     ## Formulario
     Este módulo registrar accesorios o dispositivos de entrada usando arreglos de NumPy
-    """
+    """)
     st.divider()
   
     if "registros" not in st.session_state:
