@@ -106,8 +106,8 @@ elif app_mode == 'Ejercicio 1':
       st.info("Aún no hay movimientos registrados.")
 
 elif app_mode == 'Ejercicio 2':
-  # --- Configuración de la página ---
-  st.set_page_config(page_title="Ejercicio 1 - Formulario")
+    # --- Configuración de la página ---
+    st.set_page_config(page_title="Ejercicio 1 - Formulario")
     st.markdown("""
     ## Formulario
     Este módulo registrar accesorios o dispositivos de entrada usando arreglos de NumPy
